@@ -5,15 +5,15 @@ public class Principal {
     public static void main(String[] args) {
     	try {
         Scanner sc = new Scanner(System.in);
-        int opcion = 0;
-        do {
+        int opcion = 0; 
+        do { //menu de opciones
             System.out.println("\n------ MENÚ ------");
             System.out.println("1 – Ver películas");
             System.out.println("2 – Salir");
             System.out.print("Seleccione una opción: ");
-            
+             
             opcion = sc.nextInt();
-
+            //controlamos la opcion elegida
             switch (opcion) {
                 case 1:
                     ConexionCine.mostrarPeliculas();
@@ -25,11 +25,11 @@ public class Principal {
                     System.out.println("Opción no válida. Intente de nuevo.");
             }
         } while (opcion != 2);
-       
+        	
         sc.close();  
-        }catch(Exception e) {
+        }catch(Exception e) { //excepcion por si no se elige un numero.
         	System.out.println("Solo se pueden elegir numeros.");
-        	Principal.main(args);
+        	Principal.main(args); //llamamos de nuevo al metodo principal
         }
     }
 }
